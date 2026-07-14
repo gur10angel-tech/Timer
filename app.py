@@ -158,8 +158,9 @@ TIMER_TEMPLATE = """<!doctype html>
 <html>
 <head><meta charset="utf-8">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap');
   html,body{margin:0;height:100%;background:#0b0f14;overflow:hidden;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#fafafa;}
+    font-family:'Assistant',-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#fafafa;}
   #stage{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1vh;}
   #name{font-size:min(6vw,8vh);font-weight:600;color:#cbd5e1;text-align:center;padding:0 3vw;}
   #clock{font-weight:800;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:.02em;}
@@ -265,7 +266,12 @@ def server_clock_tag():
 # ---------- עיצוב ----------
 
 RTL_CSS = """<style>
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap');
 .stApp {direction: rtl;}
+/* הפונט מוחל על הכל חוץ מאייקוני המערכת של Streamlit (פונט צלמיות) וקוד */
+.stApp :not([data-testid="stIconMaterial"]):not(code):not(pre) {
+  font-family: 'Assistant', -apple-system, 'Segoe UI', sans-serif;
+}
 [data-testid="stMarkdownContainer"], [data-testid="stWidgetLabel"] {text-align: right;}
 .stTextInput input, .stTextArea textarea {direction: rtl; text-align: right;}
 h1, h2, h3 {text-align: right;}
